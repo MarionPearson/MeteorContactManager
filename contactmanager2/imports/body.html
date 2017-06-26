@@ -1,0 +1,91 @@
+<body>
+    <h1 style="text-align:center">
+        Contact Manager
+    </h1>
+    
+    <table class="ui compact celled definition table">
+    <thead>
+        <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>E-mail address</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {{#each contacts}}
+            {{>contact}}
+        {{/each}}
+
+
+        <tr id="toggleme" style="display:none">
+        <td>
+            <button class="ui icon button" id="saveadd">
+                <i class="plus icon"></i>
+            </button>
+        </td>
+        <td>
+            <div class ="ui form">
+                <div class="field">
+                    <label></label>
+                    <input type="text" placeholder="Name" id="name">
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class ="ui form">
+                <div class="field">
+                    <label></label>
+                    <input type="text" placeholder="Phone Number" id="phone">
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class ="ui form">
+                <div class="field">
+                    <label></label>
+                    <input type="text" placeholder="Email Address" id="email">
+                </div>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <td style="background:white"></td>
+            <td>
+                <button class="positive ui button" id="addcontact">
+                    <i class="icon user"></i>
+                    Add Contact
+                </button>
+            </td>
+            <td>
+                <button class="ui button" id="editcontacts">
+                    <i class="icon user"></i>
+                    Edit Contacts
+                </button>
+            </td>
+            <td>
+                <button class="negative ui button" id="removecontact">
+                    <i class="icon erase"></i>
+                    Remove Contact(s)
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    
+    <tfoot class="full-width">
+    </tfoot>
+    </table>
+    <br>
+</body>
+
+<template name="contact">
+    <tr>
+        <td> 
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked remove" />
+         </td>
+        <td>{{name}}</td>
+        <td>{{phone}}</td>
+        <td>{{email}}</td>
+    </tr>
+</template>
